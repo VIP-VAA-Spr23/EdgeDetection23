@@ -19,7 +19,7 @@ This project focuses on the accuracy of the localizer in identifying the animal 
 * numpy library- create numpy arrays and perform mathematical calculations
 
 ## General instructions to test sample set:
-I have already provided the data to test the sample bounding boxes and determine correct classifications. The user would only need to run main.py. This requires the user to insert the path of the GndLocs folder which is provided in the repository. Make sure gnd_pairs.csv and bbsTP.csv is in the explorer of your IDE and run the file.
+I have already provided the data to test the sample bounding boxes and determine correct classifications. The user would only need to run main.py. This requires the user to clone the repository and insert the path of the GndLocs folder which is provided in the repository. Make sure gnd_pairs.csv and bbsTP.csv is in the explorer of your IDE and run the file. If the user intends on running a different sample set images, then follow the instructions for each file below.
 ## Instructions for each python file:
 
 ### File: createLOCS.py
