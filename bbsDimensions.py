@@ -3,8 +3,8 @@ import csv
 import pickle
 
 if __name__ == "__main__":
-    bbs_csv = os.listdir("C:/Users/krish/OneDrive/Desktop/VIP/outputs_csv/outputs_csv")
-    gnd_locs = os.listdir("C:/Users/krish/OneDrive/Desktop/VIP/GndLocs")
+    bbs_csv = os.listdir("C:/Users/krish/OneDrive/Desktop/VIP/outputs_csv/outputs_csv") #Enter file path for folder that contains csv files
+    gnd_locs = os.listdir("C:/Users/krish/OneDrive/Desktop/VIP/GndLocs")#Enter file path for manually created folder of all the location images
     #img_locs = os.listdir("C:/Users/krish/OneDrive/Desktop/VIP/ImgLocs") 
     
     with open('name_Pairs.csv', 'r', newline='') as csvfile:
