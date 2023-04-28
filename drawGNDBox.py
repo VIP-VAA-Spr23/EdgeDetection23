@@ -7,7 +7,7 @@ def createBOX(dim, img):
     y = dim[1]
     w = dim[2]
     h = dim[3]
-    width, height = img.shape[1], img.shape[0]#test
+    width, height = img.shape[1], img.shape[0]#change
 
     x = int(x*width)
     y = int(y*height)
