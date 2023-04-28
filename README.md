@@ -1,20 +1,25 @@
 # VIP-EdgeDetection
 ## Overview
-**Purpose**: Determine which and how many bounding boxes that are detected by the localizer are true detections or not.
+**Purpose**: 
 
-**Input**:
+This project focuses on the accuracy of the localizer in identifying the animal detections from the camera footage. The research program has provided a dataset of images and the bounding boxes for each image. A bounding box is a cropped part of the full frame image. The existance of the bounding boxes show the existance of animals present within the bounding box. The goal of this project is to determine if a bounding box is correctly identified by the localizer by seeing if it actually entails an animal in it. We are working with a sample set of 203 images containing bounding boxes for each image.
 
-* Folder of full frame image inputs.
+**Input**: 
+
+* Folder of the 203 full frame image inputs.
 * Json file corresponding to the folder that includes filenames of all the full frame images and the location for each image location for each image
 
 **Output:**
-* List showing bounding boxes that are true detections and false detections
+* List showing bounding boxes that are true positive detections and false positive detections
 ### Libraries required:
 * json libary- read and parse json files
 * os library- read folder directories and create folder paths and new folders 
 * cv2 library- work with image processing to perform gaussian blur and dilation
 * csv library- process csv files and to extract data as well as create new csv files
 * numpy library- create numpy arrays and perform mathematical calculations
+
+## General instructions to test sample set:
+I have already provided the data to test the sample bounding boxes and determine correct classifications. The user would only need to run main.py. This requires the user to insert the path of the GndLocs folder which is provided in the repository. Make sure gnd_pairs.csv and bbsTP.csv is in the explorer of your IDE and run the file.
 ## Instructions for each python file:
 
 ### File: createLOCS.py
@@ -47,7 +52,7 @@ This file contains two functions that involve creating bounding boxes. The first
 	The second function is called getImages(). This function takes the bbsTP list and the specific bounding box to test as arguments. It outputs returns two cropped images.
 One image is the bounding box in the empty frame. The other image is the actual bounding box with the animal.
 	
-### File : checkBBS.py
+### File : main.py
 	
 This file prints out a list of True and false detections. It calls the getImages() function for each bounding box in the bbsTP file.
 	Then it calls the getEdges function from edgeDetection file to determine the number of edges in the image. The number of edges for the empty bounding box and the
