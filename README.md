@@ -1,13 +1,14 @@
 # VIP-EdgeDetection
-Purpose - Determine which and how many bounding boxes that are detected by the localizer are true detections or not.
+## Overview
+**Purpose**: Determine which and how many bounding boxes that are detected by the localizer are true detections or not.
 
-Input:
-	Folder of full frame image inputs.
+**Input**:
 
-	Json file corresponding to the folder that includes filenames of all the full frame images and the location for each image location for each image
+* Folder of full frame image inputs.
+* Json file corresponding to the folder that includes filenames of all the full frame images and the location for each image location for each image
 
-Output:
-	List showing bounding boxes that are true detections and false detections
+**Output:**
+* List showing bounding boxes that are true detections and false detections
 
 Instructions for each file:
 
