@@ -7,7 +7,7 @@ import csv
 
 if __name__ == '__main__':
 
-    gnd_locs = os.listdir("C:/Users/krish/OneDrive/Desktop/VIP/GndLocs")
+    gnd_locs = os.listdir("GndLocs")
     with open('bbsTP.csv', 'r', newline='') as csvfile:
     # Create a CSV reader object
         reader = csv.reader(csvfile)

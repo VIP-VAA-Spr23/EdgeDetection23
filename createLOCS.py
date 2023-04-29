@@ -4,7 +4,7 @@ import cv2
 import csv
 
 def main():
-    with open("C:/Users/krish/Downloads/labeled_file_info.json", 'r') as f: #insert json file folder from downloads
+    with open('labeled_file_info.json', 'r') as f: #insert json file folder from downloads
         data = json.load(f)
     names = [d["filename"] for d in data]
     locations = [d["latlon"] for d in data]
@@ -31,14 +31,15 @@ def main():
         fileLists.append(fileNames)
     
     
-    imgDir = "C:/Users/krish/Downloads/full_frame_image_inputs/full_frame_image_inputs" #folder of full frame images
+    imgDir = "full_frame_image_inputs" #folder of full frame images
     fullDir = os.listdir(imgDir)
- 
+    
     
     i = 0
     for file in fileLists:
         latd = str(lats[i])
         pathDir = os.path.join("C:/Users/krish/OneDrive/Desktop/VIP/ImgLocs", latd) #create a folder for path
+        '''
         os.mkdir(pathDir)
         i+= 1
         for imgName in file:
@@ -48,7 +49,7 @@ def main():
             img = cv2.imread(imgP)
             cv2.imwrite(os.path.join(pathDir, newImg), img)
 
-    
+    '''
 
 if __name__ == "__main__":
    main()

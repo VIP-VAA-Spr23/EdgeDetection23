@@ -3,8 +3,9 @@ import csv
 import pickle
 
 if __name__ == "__main__":
-    bbs_csv = os.listdir("C:/Users/krish/OneDrive/Desktop/VIP/outputs_csv/outputs_csv") #Enter file path for folder that contains csv files
-    gnd_locs = os.listdir("C:/Users/krish/OneDrive/Desktop/VIP/GndLocs")#Enter file path for manually created folder of all the location images
+    outputPath = os.path.abspath('outputs_csv/outputs_csv')
+    bbs_csv = os.listdir(outputPath) #Enter file path for folder that contains csv files
+    gnd_locs = os.listdir("GndLocs")#Enter file path for manually created folder of all the location images
     #img_locs = os.listdir("C:/Users/krish/OneDrive/Desktop/VIP/ImgLocs") 
     
     with open('name_Pairs.csv', 'r', newline='') as csvfile:
@@ -32,7 +33,7 @@ if __name__ == "__main__":
     bbsFiles = []
     nameCSV = []
     for i in range(len(csv_bbs)):
-        csv_path = os.path.join("C:/Users/krish/OneDrive/Desktop/VIP/outputs_csv/outputs_csv", csv_bbs[i])
+        csv_path = os.path.join(outputPath, csv_bbs[i])
         with open(csv_path, mode="r") as csv_file:
             reader = csv.reader(csv_file, delimiter=',')
             csvRows = []

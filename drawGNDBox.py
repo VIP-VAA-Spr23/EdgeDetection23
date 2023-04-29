@@ -20,7 +20,7 @@ def createBOX(dim, img):
 
 
 if __name__ == "__main__":
-    gnd_locs = os.listdir("C:/Users/krish/OneDrive/Desktop/VIP/GndLocs")
+    gnd_locs = os.listdir("GndLocs")
     with open('bbsTP.csv', 'r', newline='') as csvfile:
     # Create a CSV reader object
         reader = csv.reader(csvfile)
@@ -30,13 +30,16 @@ if __name__ == "__main__":
         reader = csv.reader(csvfile)
         gnd_pairs = list(reader)
     names = [ele[0] for ele in gnd_pairs]
+    
 
 def getImages(bbsTP, gnd_pairs, names, gnd_locs, v):
+    file_path = os.path.abspath('GndLocs')
     dim = bbsTP[v][1]
     dim = [float(i.strip("'")) for i in dim.strip("[]").split(", ")]
     
     n = bbsTP[v][0].replace('.csv', '.jpg')
-    bbPath = os.path.join("C:/Users/krish/Downloads/full_frame_image_inputs/full_frame_image_inputs", n)
+    fpath = os.path.abspath('full_frame_image_inputs')
+    bbPath = os.path.join(fpath, n)
     bbImg = cv2.imread(bbPath, 0)
     #cv2.imshow('bruh', bbImg)
     image = createBOX(dim, bbImg)
@@ -47,7 +50,7 @@ def getImages(bbsTP, gnd_pairs, names, gnd_locs, v):
         loc = gnd_pairs[idx][1] + '.jpg'
         
         if loc in gnd_locs:
-            path = os.path.join("C:/Users/krish/OneDrive/Desktop/VIP/GndLocs", loc)
+            path = os.path.join(file_path, loc)
             img = cv2.imread(path, 0)
             #cv2.imshow('ds', img)
             img = createBOX(dim, img)
