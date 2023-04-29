@@ -24,8 +24,8 @@ A set of bounding boxes are processed which is traced back to its corresponding 
 * numpy library- create numpy arrays and perform mathematical calculations
 
 ## General instructions to test sample set:
-I have already provided the data to test the sample bounding boxes and determine correct classifications. The user would only need to run main.py. This requires the user to import the libraries and clone the repository. Make sure gnd_pairs.csv and bbsTP.csv and GndLocs folder is in the explorer of your IDE and run the file. If the user intends on running a different sample set images, then follow the instructions for each file below.
-## Instructions for each python file:
+I have already provided the data to test the sample bounding boxes and determine correct classifications. The user would only need to run main.py. This requires the user to import the libraries and clone the repository. Make sure gnd_pairs.csv and bbsTP.csv and GndLocs folder is in the explorer of your IDE and run the file. If the user intends on running a different sample set images, then follow the instructions for the createLOCS.py file below and run each of the files.
+## Purpose of each python file:
 
 ### File: createLOCS.py
 #### Instructions for testing your own set of bounding boxes: 
@@ -40,7 +40,7 @@ This script will parse the latidude locations from the json file and its corresp
 
 The user would now have to manually pick out the empty image frames from each location that don't have animals present and add it to a new folder. This folder should be named GndLocs and be placed in the same directory as all the scripts.
 	However, since I have already done that created a new folder called GndLocs that contains an empty image frame for each location,
-	there is no need.
+	there is no need unless there are new locations.
 	
 ### File: bbsDimensions.py
 	
