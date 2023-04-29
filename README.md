@@ -43,9 +43,6 @@ The user would now have to manually pick out the empty image frames from each lo
 	there is no need.
 	
 ### File: bbsDimensions.py
-
-Enter the path for the folder containing a csv file of bounding boxes for each filename. That folder is stored by variable name bbs_csv.
-	Enter the path for the folder that you manually created called GndLocs which is stored into gnd_locs.
 	
 This file will create a file called gnd_pairs.csv. This csv file contains filtered pairs that will only contain tuples of filenames
 	and its locations only for the manually selected ground truth locations.
@@ -54,14 +51,15 @@ This file will create a file called gnd_pairs.csv. This csv file contains filter
 	
 ### File: drawGNDBox.py
 	
-This file contains two functions that involve creating bounding boxes. The first function createBOX() creates and returns a cropped image representing a boundin box.
+This file contains two functions that involve creating the bounding boxes. The first function createBOX() creates and returns a cropped image representing a bounding box.
 	It needs to take two arguments which include the dimension list and the image to be cropped. This function is called in the second function that is created.
-	The second function is called getImages(). This function takes the bbsTP list and the specific bounding box to test as arguments. It outputs returns two cropped images.
-One image is the bounding box in the empty frame. The other image is the actual bounding box with the animal.
+	The second function is called getImages(). This function takes the bbsTP list and the specific bounding box to test as arguments. Its output returns two cropped images. One image is the bounding box in the empty frame. The other image is the actual bounding box with the animal.
+### File: EdgeDetection.py
+There are two functions in this file. The funciton generateImg() takes in the bounding box image and transforms it to have edges. The image is than returned and goes into the getEdges() function which returns the number of edges in the image.
 	
 ### File : main.py
 	
 This file prints out a list of True and false detections. It calls the getImages() function for each bounding box in the bbsTP file.
 	Then it calls the getEdges function from edgeDetection file to determine the number of edges in the image. The number of edges for the empty bounding box and the
-	detected bounding box. If there is a significant change in the number of edges, then the boundin box is a correct detecion.
+	detected bounding box. If there is a significant change in the number of edges, then the bounding box is a correct detecion.
 	
